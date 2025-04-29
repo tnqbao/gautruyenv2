@@ -9,8 +9,8 @@ interface Comic {
   origin_name: string
   slug: string
   year: number
-  poster_url: string
   thumb_url: string
+  updatedAt: string
   status?: string
   category?: { name: string; slug: string }[]
   author?: { name: string; slug: string }[]
@@ -30,11 +30,10 @@ export default function ComicGrid({ comics }: ComicGridProps) {
     >
       {comics.map((comic, index) => (
         <ComicCard
-          key={comic.id}
+          key={comic.slug}
           comic={{
             title: comic.name,
-            year: comic.year.toString(),
-            poster: comic.poster_url || "/placeholder.svg",
+            thumb: "https://img.otruyenapi.com/uploads/comics/" + comic.thumb_url || "/placeholder.svg",
             slug: comic.slug,
           }}
           index={index}

@@ -149,9 +149,7 @@ export default function Header() {
               </SheetContent>
             </Sheet>
 
-            <Link href="/" className="flex items-center gap-2">
-              <LogoImage />
-            </Link>
+            <LogoImage />
           </div>
 
           <nav className="hidden md:flex items-center gap-6">

@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf9e3d2b-580b-46ce-834b-f594ed910c64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/comic/chapter-list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/comic/comic-detail.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/comic/comic-reader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/logo-image.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/read/[slug]/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/the-loai/[slug]/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/the-loai/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/truyen-tranh/[slug]/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitmodules" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/auth/auth-dialog.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/auth/login-form.tsx" beforeDir="false" />
@@ -25,11 +21,13 @@
       <change beforePath="$PROJECT_DIR$/../gauphimv3/src/pages/layout.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gauphimv3/src/pages/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../gauphimv3/src/pages/loading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bamboo-forest.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bamboo-forest.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/comic-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comic-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/comic-grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comic-grid.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/danh-sach/[slug]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/danh-sach/[slug]/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/axios.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/axios.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gauphimv3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +51,8 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/Data/Code/General/gau_APP/gautruyenv2/src/components",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "F:/Data/Code/General/gau_APP/gautruyenv2/src/pages",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,8 +64,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\components" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\pages" />
+      <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\components" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\lib" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\components\ui" />
@@ -95,7 +93,7 @@
       <workItem from="1745905398554" duration="1942000" />
       <workItem from="1745908429587" duration="5654000" />
       <workItem from="1745925265413" duration="360000" />
-      <workItem from="1745925649456" duration="9478000" />
+      <workItem from="1745925649456" duration="16830000" />
     </task>
     <servers />
   </component>

@@ -39,9 +39,9 @@ export interface Comic {
   id: string
   name: string
   origin_name: string
+  updatedAt: string
   slug: string
   year: number
-  poster_url: string
   thumb_url: string
   status?: string
   category?: { name: string; slug: string }[]

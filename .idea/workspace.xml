@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf9e3d2b-580b-46ce-834b-f594ed910c64" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitmodules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/auth/auth-dialog.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/auth/login-form.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/layout/header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gau-wrapper-service/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gau-wrapper-service/gau-wrapper-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gau_blog/gau_blog/database/Blog.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gauphimv3/src/components/theme-effects.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gauphimv3/src/components/theme-provider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gauphimv3/src/components/theme-toggle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gauphimv3/src/pages/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gauphimv3/src/pages/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../gauphimv3/src/pages/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gauphimv3" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2wOGq11NBmqy3Ttjzr7ORudytN2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/Data/Code/General/gau_APP/gautruyenv2/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "F:\\Data\\Code\\General\\gau_APP\\gautruyenv2\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf9e3d2b-580b-46ce-834b-f594ed910c64" name="Changes" comment="" />
+      <created>1745905394573</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745905394573</updated>
+      <workItem from="1745905398554" duration="1942000" />
+      <workItem from="1745908429587" duration="592000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

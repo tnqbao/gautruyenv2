@@ -1,0 +1,21 @@
+# Bỏ qua node_modules vì đã được cài đặt bên trong container
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Bỏ qua build output nếu không cần
+.next
+out
+
+# Bỏ qua file môi trường
+.env
+.env.local
+.env.development
+.env.production
+
+# Bỏ qua các file hệ thống và IDE
+.DS_Store
+.git
+.gitignore
+.vscode
+.idea

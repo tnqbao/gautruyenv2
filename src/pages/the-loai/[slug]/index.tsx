@@ -1,43 +1,43 @@
-import { Suspense} from "react";
+import { Suspense } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Breadcrumb from "@/components/breadcrumb";
 import ComicGrid from "@/components/comic-grid";
 import Pagination from "@/components/pagination";
+import { categories } from "@/components/category-dropdown";
 import { ComicSectionSkeleton } from "@/components/loading-skeletons";
-import { fetchComicsByCategory, listTypes } from "@/lib/api";
+import { fetchComicsByGenre } from "@/lib/api";
 
-export async function getServerSideProps(context : any) {
+export async function getServerSideProps(context: any) {
   const { slug } = context.params;
   const page = context.query.page ? Number.parseInt(context.query.page) : 1;
 
-  if (!listTypes[slug]) {
+  const category = categories.find((cat) => cat.slug === slug);
+
+  if (!category) {
     return {
       notFound: true,
     };
   }
 
-  const listType = listTypes[slug];
-  const { comics, pagination } = await fetchComicsByCategory(slug, page);
+  const { comics, pagination } = await fetchComicsByGenre(slug, page);
 
   return {
     props: {
       slug,
       page,
-      listType,
+      category,
       comics,
       pagination,
     },
   };
 }
 
-interface ListPageProps {
+interface CategoryPageProps {
   slug: string;
   page: number;
-  listType: {
-    breadcrumb: string;
-    title: string;
-    description: string;
+  category: {
+    name: string;
   };
   comics: any[];
   pagination: {
@@ -45,24 +45,24 @@ interface ListPageProps {
   };
 }
 
-export default function ListPage({ slug, page, listType, comics, pagination }: ListPageProps) {
+export default function CategoryPage({ slug, page, category, comics, pagination }: CategoryPageProps) {
   return (
       <div className="flex min-h-screen flex-col bg-[#f8f9fa] dark:bg-gray-900 transition-colors duration-300">
         <Header />
 
         <main className="flex-1 container px-4 md:px-6 py-4">
-          <Breadcrumb items={[{ label: "Danh Sách", href: "/danh-sach" }, { label: listType.breadcrumb }]} />
+          <Breadcrumb items={[{ label: "Thể Loại", href: "/the-loai" }, { label: category.name }]} />
 
           <div className="py-4">
-            <h1 className="text-3xl font-bold mb-2">{listType.title}</h1>
-            <p className="text-muted-foreground">{listType.description}</p>
+            <h1 className="text-3xl font-bold mb-2">Truyện {category.name}</h1>
+            <p className="text-muted-foreground">Danh sách truyện thể loại {category.name} hay nhất, cập nhật mới nhất</p>
           </div>
 
           <Suspense fallback={<ComicSectionSkeleton />}>
             <ComicGrid comics={comics} />
           </Suspense>
 
-          <Pagination currentPage={page} totalPages={pagination.totalPages} baseUrl={`/danh-sach/${slug}`} />
+          <Pagination currentPage={page} totalPages={pagination.totalPages} baseUrl={`/the-loai/${slug}`} />
         </main>
 
         <Footer />

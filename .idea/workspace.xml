@@ -5,51 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf9e3d2b-580b-46ce-834b-f594ed910c64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FirstVisitNotice.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth-buttons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth/auth-form-footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth/auth-layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth/panda-window.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bamboo-decoration.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bamboo-forest.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/breadcrumb.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/category-dropdown.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/comic-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/comic-grid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/comic-section.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/floating-leaves.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header-search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/hero-slider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/hero.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loading-skeletons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/panda-logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/panda-picks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/panda-scroll-progress.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/provider/auth-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/provider/theme-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/theme-effects.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/theme-toggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/label.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/sheet.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/api/auth/login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/api/auth/logout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/api/auth/register.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/api/auth/status.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/auth/login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/auth/register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/danh-sach/[slug]/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/slices/authSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/axios.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/comic/chapter-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/comic/comic-detail.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/comic/comic-reader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/logo-image.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/read/[slug]/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/the-loai/[slug]/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitmodules" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/auth/auth-dialog.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../blog_frontend_rework/src/components/auth/login-form.tsx" beforeDir="false" />
@@ -63,15 +24,12 @@
       <change beforePath="$PROJECT_DIR$/../gauphimv3/src/components/theme-toggle.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gauphimv3/src/pages/layout.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gauphimv3/src/pages/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../gauphimv3/src/pages/loading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Home.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/danh-sach/[slug]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/danh-sach/[slug]/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gauphimv3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,8 +67,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\components" />
-      <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\lib" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\pages" />
+      <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\lib" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2" />
       <recent name="F:\Data\Code\General\gau_APP\gautruyenv2\src\components\ui" />
     </key>
@@ -137,7 +95,7 @@
       <workItem from="1745905398554" duration="1942000" />
       <workItem from="1745908429587" duration="5654000" />
       <workItem from="1745925265413" duration="360000" />
-      <workItem from="1745925649456" duration="4955000" />
+      <workItem from="1745925649456" duration="9478000" />
     </task>
     <servers />
   </component>

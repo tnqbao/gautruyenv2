@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 import CategoryDropdown from "@/components/category-dropdown"
-import PandaLogo from "@/components/panda-logo"
 import ThemeToggle from "@/components/theme-toggle"
 import HeaderSearch from "@/components/header-search"
 import { AnimatePresence } from "framer-motion"
@@ -24,6 +23,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import LogoImage from "@/components/logo-image";
 
 export default function Header() {
   const pathname = usePathname()
@@ -150,8 +150,7 @@ export default function Header() {
             </Sheet>
 
             <Link href="/" className="flex items-center gap-2">
-              <PandaLogo className="h-8 w-8" />
-              <span className="font-bold text-xl hidden sm:inline-block">Gấu Truyện </span>
+              <LogoImage />
             </Link>
           </div>
 

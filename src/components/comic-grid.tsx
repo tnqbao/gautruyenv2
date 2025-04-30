@@ -10,7 +10,6 @@ interface Comic {
   slug: string
   year: number
   thumb_url: string
-  updatedAt: string
   status?: string
   category?: { name: string; slug: string }[]
   author?: { name: string; slug: string }[]

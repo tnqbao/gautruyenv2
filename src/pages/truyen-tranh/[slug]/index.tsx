@@ -1,44 +1,56 @@
+import { GetServerSideProps } from "next"
 import { Suspense } from "react"
-import { notFound } from "next/navigation"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Breadcrumb from "@/components/breadcrumb"
-import ComicDetail from "@/components/comic/comic-detail"
 import { ComicDetailSkeleton } from "@/components/loading-skeletons"
-import { fetchComicBySlug } from "@/lib/api"
-
+import type { ComicDetailType } from "@/lib/api"
+import ComicDetail from "@/components/comic/comic-detail"
+import {comicApiInstance} from "@/utils/axios.config";
 interface ComicPageProps {
-  params: {
-    slug: string
-  }
+    comicData: ComicDetailType
 }
 
-export default async function ComicPage({ params }: ComicPageProps) {
-  const { slug } = params
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+    const slug = query.slug as string
 
-  // Fetch comic data
-  const comicData = await fetchComicBySlug(slug)
+    try {
+        const res = await comicApiInstance.get(`/v1/api/truyen-tranh/${slug}`)
+        const response = res.data
 
-  // If comic not found, return 404
-  if (!comicData) {
-    notFound()
-  }
+        if (!response?.status || !response?.data?.item) {
+            return { notFound: true }
+        }
+        console.log(response.data.item)
+        return {
+            props: {
+                comicData: response.data.item,
+            },
+        }
+    } catch (error) {
+        console.error("Error fetching comic:", error)
+        return { notFound: true }
+    }
+}
 
-  return (
-    <div className="flex min-h-screen flex-col bg-[#f8f9fa] dark:bg-gray-900 transition-colors duration-300">
-      <Header />
 
-      <main className="flex-1">
-        <div className="container px-4 md:px-6 py-4">
-          <Breadcrumb items={[{ label: "Truyện", href: "/truyen" }, { label: comicData.name }]} />
+export default function ComicPage({ comicData }: ComicPageProps) {
+    return (
+        <div className="flex min-h-screen flex-col bg-[#f8f9fa] dark:bg-gray-900 transition-colors duration-300">
+            <Header />
+
+            <main className="flex-1">
+                <div className="container px-4 md:px-6 py-4">
+                    <Breadcrumb items={[{ label: "Truyện", href: "/truyen" }, { label: comicData.name }]} />
+                </div>
+
+                <Suspense fallback={<ComicDetailSkeleton />}>
+                    <ComicDetail {...comicData} />
+                </Suspense>
+            </main>
+
+            <Footer />
         </div>
-
-        <Suspense fallback={<ComicDetailSkeleton />}>
-          {/*<ComicDetail {...comicData} />*/}
-        </Suspense>
-      </main>
-
-      <Footer />
-    </div>
-  )
+    )
 }
+

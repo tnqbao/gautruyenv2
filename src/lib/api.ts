@@ -2,7 +2,7 @@ import axios from "axios"
 
 // Create an axios instance with default configuration
 const comicApiInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_COMIC_API || "https://otruyen-api.com",
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "https://otruyen-api.com",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -11,27 +11,27 @@ const comicApiInstance = axios.create({
 
 // Add request interceptor for authentication if needed
 comicApiInstance.interceptors.request.use(
-  (config) => {
-    // You can add auth token here if needed
-    // const token = getToken();
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
-    return config
-  },
-  (error) => {
-    return Promise.reject(error)
-  },
+    (config) => {
+      // You can add auth token here if needed
+      // const token = getToken();
+      // if (token) {
+      //   config.headers.Authorization = `Bearer ${token}`;
+      // }
+      return config
+    },
+    (error) => {
+      return Promise.reject(error)
+    },
 )
 
 // Add response interceptor for error handling
 comicApiInstance.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    // Handle API errors here
-    console.error("API Error:", error.response?.data || error.message)
-    return Promise.reject(error)
-  },
+    (response) => response,
+    (error) => {
+      // Handle API errors here
+      console.error("API Error:", error.response?.data || error.message)
+      return Promise.reject(error)
+    },
 )
 
 // Comic type definition
@@ -39,9 +39,9 @@ export interface Comic {
   id: string
   name: string
   origin_name: string
-  updatedAt: string
   slug: string
   year: number
+  poster_url: string
   thumb_url: string
   status?: string
   category?: { name: string; slug: string }[]
@@ -49,28 +49,33 @@ export interface Comic {
 }
 
 // Comic detail type definition
-export interface ComicDetail extends Comic {
-  content: string
-  type: string
-  status: string
-  is_adult: boolean
-  is_trending: boolean
-  view_count: number
-  follow_count: number
-  rating: {
-    value: number
-    count: number
-  }
-  chapters: {
+export interface ComicDetailType {
+  _id: string
+  name: string
+  slug: string
+  origin_name: string[] // dạng mảng theo JSON gốc
+  content: string // HTML string
+  status: "ongoing" | "completed" | string
+  thumb_url: string
+  sub_docquyen: boolean
+  author: string[] // mảng chuỗi
+  category: {
     id: string
     name: string
     slug: string
-    updated_at: string
   }[]
-  category: { name: string; slug: string }[]
-  author: { name: string; slug: string }[]
-  artist: { name: string; slug: string }[]
+  chapters: {
+    server_name: string
+    server_data: {
+      filename: string
+      chapter_name: string
+      chapter_title: string
+      chapter_api_data: string
+    }[]
+  }[]
+  updatedAt: string
 }
+
 
 // Chapter type definition
 export interface Chapter {
@@ -153,44 +158,7 @@ interface ListResponse {
 }
 
 // Function to fetch comics by category/list
-export async function fetchComicsByCategory(slug: string, page = 1): Promise<{ comics: Comic[]; pagination: any }> {
-  try {
-    const listType = listTypes[slug]
-    if (!listType) {
-      throw new Error(`List type ${slug} not found`)
-    }
 
-    const response = await comicApiInstance.get<ApiResponse<ListResponse>>(`${listType.endpoint}?page=${page}`)
-
-    if (!response.data.status) {
-      throw new Error(response.data.msg)
-    }
-
-    return {
-      comics: response.data.data.items,
-      pagination: response.data.data.params.pagination,
-    }
-  } catch (error) {
-    console.error("Error fetching comics:", error)
-    return { comics: [], pagination: { currentPage: 1, totalPages: 1 } }
-  }
-}
-
-// Function to fetch comic details by slug
-export async function fetchComicBySlug(slug: string): Promise<ComicDetail | null> {
-  try {
-    const response = await comicApiInstance.get<ApiResponse<ComicDetail>>(`/truyen-tranh/${slug}`)
-
-    if (!response.data.status) {
-      throw new Error(response.data.msg)
-    }
-
-    return response.data.data
-  } catch (error) {
-    console.error("Error fetching comic details:", error)
-    return null
-  }
-}
 
 // Function to fetch chapter by slug
 export async function fetchChapter(comicSlug: string, chapterSlug: string): Promise<Chapter | null> {
@@ -247,7 +215,7 @@ export async function fetchComicsByGenre(slug: string, page = 1) {
 export async function searchComics(keyword: string, page = 1) {
   try {
     const response = await comicApiInstance.get<ApiResponse<ListResponse>>(
-      `/tim-kiem?keyword=${encodeURIComponent(keyword)}&page=${page}`,
+        `/tim-kiem?keyword=${encodeURIComponent(keyword)}&page=${page}`,
     )
 
     if (!response.data.status) {

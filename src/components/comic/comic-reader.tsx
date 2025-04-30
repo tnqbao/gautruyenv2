@@ -39,7 +39,7 @@ interface ComicReaderProps {
 export default function ComicReader({ title, images, prevChapter, nextChapter, comicSlug }: ComicReaderProps) {
   const [readingMode, setReadingMode] = useState<"vertical" | "horizontal" | "paged">("vertical")
   const [currentPage, setCurrentPage] = useState(0)
-  const [showControls, setShowControls] = useState(true)
+  // const [showControls, setShowControls] = useState(true)
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   // Handle scroll to show/hide scroll to top button

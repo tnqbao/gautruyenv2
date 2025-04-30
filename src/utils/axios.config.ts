@@ -29,9 +29,9 @@ const createUserApiInstance = (): AxiosInstance => {
     return instance;
 };
 
-const createMovieApiInstance = (): AxiosInstance => {
+const createComicApiInstance = (): AxiosInstance => {
     return axios.create({
-        baseURL: process.env.NEXT_PUBLIC_MOVIE_API,
+        baseURL: process.env.NEXT_PUBLIC_COMIC_API,
         headers: {
             'Content-Type': 'application/json',
         },
@@ -40,9 +40,9 @@ const createMovieApiInstance = (): AxiosInstance => {
 };
 
 export const userApiInstance = createUserApiInstance();
-export const movieApiInstance = createMovieApiInstance();
+export const comicApiInstance = createComicApiInstance();
 
-movieApiInstance.interceptors.response.use(
+comicApiInstance.interceptors.response.use(
     (response) => response,
     (error) => {
         console.error("API Error:", error.response?.data || error.message);
@@ -50,7 +50,7 @@ movieApiInstance.interceptors.response.use(
     }
 );
 
-movieApiInstance.interceptors.request.use(
+comicApiInstance.interceptors.request.use(
     (config) => {
         return config;
     },

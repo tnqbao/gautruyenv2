@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Search, Menu, User } from "lucide-react"
+import { Search, Menu, User, ChevronDown, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
-import CategoryDropdown from "@/components/category-dropdown"
+import CategoryDropdown, { categories } from "@/components/category-dropdown"
 import ThemeToggle from "@/components/theme-toggle"
 import HeaderSearch from "@/components/header-search"
 import { AnimatePresence } from "framer-motion"
@@ -23,13 +23,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import LogoImage from "@/components/logo-image";
+import LogoImage from "@/components/logo-image"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 
 export default function Header() {
   const pathname = usePathname()
   const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false)
   const { user_id, fullname } = useSelector(selectAuth)
   const isAuthed = user_id !== null
 
@@ -81,13 +83,19 @@ export default function Header() {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <Link href="/profile" className="w-full">Hồ sơ</Link>
+            <Link href="/profile" className="w-full">
+              Hồ sơ
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link href="/favorites" className="w-full">Truyện yêu thích</Link>
+            <Link href="/favorites" className="w-full">
+              Truyện yêu thích
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link href="/history" className="w-full">Lịch sử đọc</Link>
+            <Link href="/history" className="w-full">
+              Lịch sử đọc
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout}>Đăng xuất</DropdownMenuItem>
@@ -116,7 +124,7 @@ export default function Header() {
       <header
           className={cn(
               "sticky top-0 z-50 w-full transition-all duration-300",
-              isScrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm" : "bg-white dark:bg-gray-900"
+              isScrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm" : "bg-white dark:bg-gray-900",
           )}
       >
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -128,20 +136,70 @@ export default function Header() {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="left" className="w-[300px] sm:w-[400px] overflow-y-auto">
                 <nav className="flex flex-col gap-4 mt-8">
-                  <Link href="/" className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors">
-                    Trang Chủ
-                  </Link>
-                  <Link href="/danh-sach/truyen-moi" className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors">
-                    Truyện Mới
-                  </Link>
-                  <Link href="/danh-sach/hoan-thanh" className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors">
-                    Hoàn Thành
-                  </Link>
-                  <Link href="/history" className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors">
-                    Lịch Sử Đọc
-                  </Link>
+                  <SheetClose asChild>
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors"
+                    >
+                      Trang Chủ
+                    </Link>
+                  </SheetClose>
+
+                  <Collapsible open={isCategoryOpen} onOpenChange={setIsCategoryOpen} className="w-full">
+                    <CollapsibleTrigger asChild>
+                      <Button
+                          variant="ghost"
+                          className="w-full justify-between px-0 py-0 text-lg font-semibold hover:text-green-600 transition-colors h-auto text-left"
+                      >
+                        <span>Thể Loại</span>
+                        {isCategoryOpen ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-2">
+                      <div className="grid grid-cols-2 gap-2">
+                        {categories.map((category) => (
+                            <SheetClose key={category.slug} asChild>
+                              <Link
+                                  href={`/the-loai/${category.slug}`}
+                                  className="text-sm py-2 hover:text-green-600 transition-colors"
+                              >
+                                {category.name}
+                              </Link>
+                            </SheetClose>
+                        ))}
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+
+                  <SheetClose asChild>
+                    <Link
+                        href="/danh-sach/truyen-moi"
+                        className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors"
+                    >
+                      Truyện Mới
+                    </Link>
+                  </SheetClose>
+
+                  <SheetClose asChild>
+                    <Link
+                        href="/danh-sach/hoan-thanh"
+                        className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors"
+                    >
+                      Hoàn Thành
+                    </Link>
+                  </SheetClose>
+
+                  <SheetClose asChild>
+                    <Link
+                        href="/history"
+                        className="flex items-center gap-2 text-lg font-semibold hover:text-green-600 transition-colors"
+                    >
+                      Lịch Sử Đọc
+                    </Link>
+                  </SheetClose>
+
                   <div className="mt-4 flex gap-2">
                     <AuthButtons />
                   </div>
@@ -157,7 +215,7 @@ export default function Header() {
                 href="/"
                 className={cn(
                     "text-sm font-medium transition-colors hover:text-green-600",
-                    isActive("/") && "text-green-600 font-semibold"
+                    isActive("/") && "text-green-600 font-semibold",
                 )}
             >
               Trang Chủ
@@ -167,7 +225,7 @@ export default function Header() {
                 href="/danh-sach/truyen-moi"
                 className={cn(
                     "text-sm font-medium transition-colors hover:text-green-600",
-                    isActive("/danh-sach/truyen-moi") && "text-green-600 font-semibold"
+                    isActive("/danh-sach/truyen-moi") && "text-green-600 font-semibold",
                 )}
             >
               Truyện Mới
@@ -176,7 +234,7 @@ export default function Header() {
                 href="/danh-sach/hoan-thanh"
                 className={cn(
                     "text-sm font-medium transition-colors hover:text-green-600",
-                    isActive("/danh-sach/hoan-thanh") && "text-green-600 font-semibold"
+                    isActive("/danh-sach/hoan-thanh") && "text-green-600 font-semibold",
                 )}
             >
               Hoàn Thành
@@ -185,7 +243,7 @@ export default function Header() {
                 href="/history"
                 className={cn(
                     "text-sm font-medium transition-colors hover:text-green-600",
-                    isActive("/history") && "text-green-600 font-semibold"
+                    isActive("/history") && "text-green-600 font-semibold",
                 )}
             >
               Lịch Sử
@@ -207,7 +265,9 @@ export default function Header() {
             </AnimatePresence>
 
             <ThemeToggle />
-            <AuthButtons />
+            <div className="hidden md:flex">
+              <AuthButtons />
+            </div>
           </div>
         </div>
       </header>
